@@ -247,23 +247,56 @@
                 <h4 class="text-fourth">Send Happiness</h4>
                 <form class="form">
                     <div class="form__div">
-                        <input type="text" v-model.lazy="name" @change="validateName" placeholder=" " id="name" class="form__input">
+                        <input type="text" v-model.lazy="name" @change="validateName" placeholder=" " id="name" name="name" class="form__input" :class="{'errorinput': errors.name}">
                         <label for="name" class="form__label" id="namelabel">Full Name</label>
+                        <p style="
+                            font-size:1.4rem;
+                            padding-left:1rem;
+                            color:red
+                        " v-if="errors.name"
+                        >@{{errors.name[0]}}</p>
                     </div>
                     <div class="form__div">
-                        <input type="text" v-model.lazy="object" @change="validateObject" placeholder=" " id="object" class="form__input"> <!--successinput // errorinput-->
+                        <input type="text" v-model.lazy="object" @change="validateObject" placeholder=" " id="object" name="object" class="form__input" :class="{'errorinput': errors.object}"> <!--successinput // errorinput-->
                         <label for="object" class="form__label" id="objectlabel">Object</label> <!--successlabel // errorlabel-->
+                        <p style="
+                            font-size:1.4rem;
+                            padding-left:1rem;
+                            color:red
+                        " v-if="errors.object"
+                        >@{{errors.object[0]}}</p>
                     </div>
                     <div class="form__div">
-                        <input type="email" v-model.lazy="email" @change="validateEmail" placeholder=" " id="email" class="form__input">
+                        <input type="email" v-model.lazy="email" @change="validateEmail" placeholder=" " id="email" name="email" class="form__input" :class="{'errorinput': errors.email}">
                         <label for="email" class="form__label" id="emaillabel">Email</label>
+                        <p style="
+                            font-size:1.4rem;
+                            padding-left:1rem;
+                            color:red
+                        " v-if="errors.email"
+                        >@{{errors.email[0]}}</p>
                     </div>
 
                     <div class="form__div">
-                        <textarea v-model.lazy="message" @change="validateMessage" class="form__input textarea" id="message" placeholder=" " cols="30" rows="5"></textarea>
+                        <textarea v-model.lazy="message" @change="validateMessage" class="form__input textarea" :class="{'errorinput': errors.message}" id="message" name="message" placeholder=" " cols="30" rows="5"></textarea>
                         <label for="message" class="form__label" id="messagelabel">Message</label>
+                        <p style="
+                            font-size:1.4rem;
+                            padding-left:1rem;
+                            color:red
+                        " v-if="errors.message"
+                        >@{{errors.message[0]}}</p>
                     </div>
-                    <button class="btn btn-white"  @click.prevent="submitForm">Send</button>
+                    <button style="min-width: 50%;" class="btn btn-white"  @click.prevent="submitForm">
+                        <span v-if="btntitle=='icon'">
+                            <i style="
+
+                            " class="fas fa-spinner"></i>
+                        </span> 
+                        <span v-else>
+                            @{{btntitle}}
+                        </span>
+                    </button>
                 </form>
             </div>
             <div class="contact__img">
@@ -311,7 +344,7 @@
 
 
 
-    <!-- <div class="overlay-back"></div>
+    <div class="overlay-back"></div>
     <div class="model">
         <div class="model__container">
             <i class="fas fa-times"></i>
@@ -367,7 +400,7 @@
 
                 
         </div>
-    </div> -->
+    </div>
     </div>
     <script src="./js/jquery.waypoints.min.js"></script>
     <script src="./js/typed.js"></script>
@@ -375,6 +408,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="./js/script.js"></script>
+    
 
 </body>
 </html>

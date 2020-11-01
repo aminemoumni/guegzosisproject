@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\ContactMail;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Mail;
 
 class FrontController extends Controller
 {
@@ -34,7 +36,41 @@ class FrontController extends Controller
      */
     public function store(Request $request)
     {
-        return "Hi user";
+        $this->validate($request, [
+            'name' => 'required|min:3',
+            'object' => 'required|min:3',
+            'email' => 'required|email',
+            'message' => 'required|min:6'
+        ]);
+
+        // \Mail::send('emails.contact_email',
+        //      array(
+        //          'name' => $request->name,
+        //          'email' => $request->email,
+        //          'subject' => $request->object,
+        //          'user_message' => $request->message,
+        //      ), function($message) use ($request)
+        //        {
+        //           $message->from('no-reply@guegzosis.com');
+        //           $message->to('childeroe12@gmail.com');
+        //        });
+
+        // $details = [
+        //     'name' => $request->name,
+        //     'email' => $request->email,
+        //     'subject' => $request->object,
+        //     'user_message' => $request->message,
+        // ];
+        $ContactMail = new ContactMail(
+            $request->name,
+            $request->object,
+            $request->email,
+            $request->message
+        );
+        
+        Mail::to('childeroe12@gmail.com')->send($ContactMail);
+            
+        dd($request->name);
     }
 
     /**

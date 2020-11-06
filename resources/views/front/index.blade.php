@@ -301,7 +301,7 @@
             </div>
             <div class="contact__img">
                 <div class="contact__img-image">
-                    <img src="./images/contact.jpg" alt="" class="contact__img-image-img">
+                    <img src="./images/contact1.jpg" alt="" class="contact__img-image-img">
                 </div>
             </div>
         </div>
@@ -331,7 +331,7 @@
                 </div>
             </div>
             <p class="footer__copyright">
-                Copyright &copy; 2020 Moumni Amine.
+                Copyright &copy; 2020. Made with <i class="fa fa-heart" aria-hidden="true"></i> by Moumni Amine.
             </p>
         </div>
     </footer>
@@ -343,7 +343,7 @@
 
 
 
-
+    @if($valide)
     <div class="overlay-back"></div>
     <div class="model">
         <div class="model__container">
@@ -359,6 +359,19 @@
                     <input type="email" placeholder="Enter your email"><br>
                     <button class="btn btn-white">Subscribe</button>
                 </form>
+            </div>
+        </div>
+    </div>
+    @endif
+    
+    <div id="modelHacker" class="model" v-if="hacker">
+        <div class="model__container">
+            <i id="times" class="fas fa-times" @click="hacker = ''"></i>
+            <div class="model__container--logo">
+                <img src="./images/logoGR.png" alt="" class="model__container--logo-img">
+            </div>
+            <div class="model__container--form">
+                <h2>@{{hacker}}</h2>
             </div>
         </div>
     </div>

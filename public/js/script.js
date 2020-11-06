@@ -7,7 +7,8 @@ new Vue({
         message:"",
         btntitle: "Send",
         valid: false,
-        errors: {}
+        errors: {},
+        hacker: ""
     },
     methods: {
         submitForm() {
@@ -35,10 +36,11 @@ new Vue({
                     }, 5000)
                 })
                 .catch((err) => {
-                    //console.log(err.response.data.errors)
+                    console.log(err.response.data[0])
 
-                    this.errors = err.response.data.errors;
-                    console.log(this.errors)
+                    this.errors = err.response.data[0];
+                    this.hacker = err.response.data.hacker;
+                    //console.log(this.errors)
                 })
             }
         },
@@ -188,10 +190,17 @@ window.addEventListener("scroll", function() {
 
 $(document).ready(function(){
     $(".fa-times").click(function() {
-        console.log("hi");
-        $(".overlay-back").remove();
+        //console.log("hi");
         $(".model").remove();
+        $(".overlay-back").remove();
     });
+
+    $("#times").click(function() {
+        //console.log("hi");
+        $("#modelHacker").remove();
+        //$(".overlay-back").remove();
+    });
+
 
 })
 

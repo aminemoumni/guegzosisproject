@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FrontController;
+use App\Http\Controllers\Auth\LoginController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,5 +15,20 @@ use App\Http\Controllers\FrontController;
 |
 */
 
-Route::get('/', [FrontController::class, 'index'])->name('home');
+Route::get('/', [FrontController::class, 'index'])->name('index');
 Route::post('/sendmessage', [FrontController::class, 'store'])->name('storeMessage');
+
+// Authentication Routes...
+Route::get('gueglogin', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('gueglogin', [LoginController::class, 'login']);
+Route::post('logout',[LoginController::class, 'logout'])->name('logout');
+
+
+// Password Reset Routes...
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+
+
+Route::get('/guegdash', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

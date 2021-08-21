@@ -1,3 +1,9 @@
+
+// const logo = document.querySelectorAll('#logo path');
+// for(let i = 0; i<logo.length; i++) {
+//     console.log(`letter ${i} is ${logo[i].getTotalLength()}`);
+// };
+
 new Vue({
     el: "#app",
     data: {
@@ -141,6 +147,40 @@ $(document).ready(function(){
     function removeBodyClass() {
         $('body').removeClass("bodyActive");
     }
+
+    $('.experience').waypoint({
+        onActive: function () {
+          $("header").addClass('blackheader');
+        //   alert("ok");
+        },
+      
+        onExit: function () {
+            $("header").removeClass('blackheader');
+        },
+    });
+    $('.competences__section').waypoint({
+        onActive: function () {
+            $("header").removeClass('blackheader');
+        //   alert("ok");
+        },
+    });
+    // $('.contact').waypoint({
+    //     onActive: function () {
+    //         $(".contact__form").addClass('animate__animated  animate__bounceInLeft')
+    //         $(".contact__img").addClass('animate__animated  animate__bounceInRight')
+    //     //   alert("ok");
+    //     },
+    // });
+
+    // $('.experience').waypoint(function(direction){
+    //     if(direction == "down") {
+    //         $('header').addClass('sticky');
+    //     } else {
+    //         $('nav').removeClass('sticky');
+    //     }
+    // },{
+    //     offset: '60px' /* this mean it will show before 50px */ 
+    // });
 });
 
 
@@ -156,6 +196,18 @@ hamburger.addEventListener("click", () => {
             //body.classList.toggle("bodyActive")
             
         }, 400);
+})
+
+navLinks.addEventListener("click", () => {
+    if(navLinks.classList.contains('active')) {
+        navLinks.classList.toggle("active");
+        hamburger.classList.toggle("actived");
+        setTimeout(() => {
+            document.querySelector(".socialmedia").classList.toggle("socialActive");
+            //body.classList.toggle("bodyActive")
+            
+        }, 400);
+    }
 })
 
 // const logo = document.querySelectorAll('#logo path');
@@ -217,3 +269,47 @@ var options = {
 setTimeout(() => {
     var typed = new Typed('#modelh3', options);
 }, 4200);
+
+/* navigation scroll smooth just copie coller dont modifie anything */
+$('a[href*="#"]')
+// Remove links that don't actually link to anything
+.not('[href="#"]')
+.not('[href="#0"]')
+.click(function(event) {
+    // On-page links
+    if (
+    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
+    && 
+    location.hostname == this.hostname
+    ) {
+    // Figure out element to scroll to
+    var target = $(this.hash);
+    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+    // Does a scroll  target exist?
+    if (target.length) {
+        // Only prevent default if animation is actually gonna happen
+        event.preventDefault();
+        $('html, body').animate({
+        scrollTop: target.offset().top
+        }, 1000, function() {
+        // Callback after animation
+        // Must change focus!
+        var $target = $(target);
+        $target.focus();
+        if ($target.is(":focus")) { // Checking if the target was focused
+            return false;
+        } else {
+            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
+            $target.focus(); // Set focus again
+        };
+        });
+    }
+    }
+
+
+
+    
+    
+
+    
+});

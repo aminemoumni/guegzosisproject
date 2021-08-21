@@ -2,10 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Email;
 use App\Models\Hacker;
 use App\Mail\ContactMail;
 use App\Models\Subscriber;
 use Illuminate\Http\Request;
+use App\Mail\ContactMailSender;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 use Symfony\Component\HttpFoundation\Response;
@@ -21,13 +23,13 @@ class FrontController extends Controller
     {
         $clientIP = request()->ip();
         $valide = false;
-        $subscriberExist = Subscriber::where('addressIp', '=', $clientIP)->first();
-        if ($subscriberExist === null) {
-            $subscriber = new Subscriber();
-            $subscriber->addressIp = $clientIP;
-            $subscriber->save();
-            $valide = true;
-        }
+        // $subscriberExist = Subscriber::where('addressIp', '=', $clientIP)->first();
+        // if ($subscriberExist === null) {
+        //     $subscriber = new Subscriber();
+        //     $subscriber->addressIp = $clientIP;
+        //     $subscriber->save();
+        //     $valide = true;
+        // }
         
         return view('front.index', [
             'valide' => $valide,
@@ -64,6 +66,7 @@ class FrontController extends Controller
             'email' => 'required|email',
             'message' => 'required|min:6'
         ]);
+
         
         if ($validator->fails()) {
             $clientIP = request()->ip();
@@ -74,9 +77,7 @@ class FrontController extends Controller
                 $validator->errors(),
                 'hacker' => 'achbaghi dir a weld l9ehba'
             ), 404);
-        } else {
-            return "Success";
-        }
+        } 
 
         // \Mail::send('emails.contact_email',
         //      array(
@@ -97,19 +98,38 @@ class FrontController extends Controller
         //     'user_message' => $request->message,
         // ];
 
+        $locale = app()->getLocale();
+        $ContactMail = new ContactMail(
+            $request->name,
+            $request->object,
+            $request->email,
+            $request->message,
+           
+        );
         
-        // $ContactMail = new ContactMail(
-        //     $request->name,
-        //     $request->object,
-        //     $request->email,
-        //     $request->message
-        // );
+        Mail::to('aminemoumni1998@gmail.com')->send($ContactMail);
+
+        $ContactMailSender = new ContactMailSender(
+            $request->name,
+            $request->email,
+            $locale
+        );
         
-        // Mail::to('childeroe12@gmail.com')->send($ContactMail);
-            
+        
+        Mail::to($request->email)->send($ContactMailSender);
+
+        $this->storeEmail($request);
+        return "success";
         //dd($request->name);
     }
 
+    /**
+     * 
+     */
+    public function switchLang($lang)
+    {
+        return redirect::route('index', $lang);
+    }
     /**
      * Display the specified resource.
      *
@@ -153,5 +173,17 @@ class FrontController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function storeEmail($request)
+    {
+        $email = new Email();
+        $email->name = $request->name;
+        $email->object = $request->object;
+        $email->email = $request->email;
+        $email->message = $request->message;
+        $email->save();
+        
+        return "Success";    
     }
 }

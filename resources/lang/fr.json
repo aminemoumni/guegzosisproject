@@ -1,0 +1,71 @@
+{
+    "About" : "À propos",
+    "Skills" : "Competences",
+    "Experiences" : "Experiences",
+    "Contact" : "Contact",
+
+    "Hello, I'm": "Salut, je suis",
+    "I'm a Full Stack Web Developer": "Je suis un Full Stack Developpeur Web ",
+
+    "Get To Know Me Better": "Connaître moi mieux",
+    "Im a": "Je suis",
+    "web developer": "developpeur web",
+
+    "I graduated from Multimedia Development at Ofppt Rabat in June 2019. I have a specialized technician diploma.": "Je suis diplômé du Développement Multimédia à l'Ofppt Rabat en juin 2019. J'ai un diplôme de technicien spécialisé.",
+    "I am now working as a web developer in a company in Rabat, we are fifteen developers with multiservice in the IT system department, I’m the Chief of University Solution Service, I have a small team, two other developers we are building applications for the University, and repairing and adding new features on existing projects. My main framework is Symfony (3.4, 4 and 5), there are other projects that run in Php Native.": "Je travaille maintenant en tant que développeur web dans l'entreprise à Rabat, nous sommes quinze développeurs avec multiservices dans Département Système Informatique, Je suis le Chef Service Solution Universitaire, j'ai une petite équipe, deux autres développeurs nous construisons des applications pour l'Université, et réparons et ajoutons des nouvelles fonctionnalités sur des projets existants. Mon Framework principal est Symfony (3.4, 4 and 5) , il y a d'autres projets qui tournent en Php Native.",
+    "During my free time I buy new courses on udemy to learn new technologies, or I build my own projects with other frameworks like Laravel Full Stack, or APIs with Node Js": "Pendant mon temps libre j'achète de nouveaux cours sur udemy pour apprendre de nouvelles technologies, ou je construis mes propres projets avec d'autres Framework comme Laravel Full Stack, ou des APIs avec Node Js",
+    "You can download my resume here below. for more details":"Vous pouvez télécharger mon CV ci-dessous. pour plus de détails",
+    "Download": "Télécharger",
+
+
+    "Internship": "Stage",
+    "From": "De",
+    "To": "à",
+    "Chief Service": "Chef Service",
+    "Developer": "Developpeur",
+    "My work as a developer":"Mon travaille en tant que développeur",
+    "It was my first experience in building web applications. In this internship I created an application that manages all the program licenses. I used for the backend php native, for the frontend html bootstrap and js.":"C'était ma première expérience dans la création d'applications Web. Dans ce stage j'ai crée une application qui gère toutes les licences de programmes. j'ai utilisées pour le backend php natif, pour le frontend html bootstrap et js.",
+    "For the main features":"Pour les fonctionnalités principales",
+    "Manage the licenses companies": "Gérer les sociétés des licences",
+    "Manage support contacts":"Gérer les contacts d'assistance",
+    "Manage users":"Gérer les utilisateurs",
+    "Send emails when the licenses close to expiry date":"Envoyer des e-mails lorsque les licences approchent de la date d'expiration",
+
+    "I had the main application the university use for manage students, inscriptions, notes, payments, diplomes, planifications of the courses  teachers and more,  it work with php native":"j'avais l'application principale utilisée par l'université pour gérer les étudiants, les inscriptions, les notes, les paiements, les diplômes, les planifications des cours des professeurs et plus, cela fonctionne avec php natif",
+    "Add new features":"Ajouter de nouvelles fonctionnalités",
+    "Fix bugs":"Corriger les bugs",
+    "Read the code source and understand how it works":"Lire le code source et comprendre comment çe fonctionne",
+    "And more...":"Et plus...",
+    "Add possibility the download reports":"Ajouter la possibilité de télécharger les rapports",
+    "At the beginning of November I received my contract to start working seriously, they gave me two other web applications":"Début novembre j'ai reçu mon contrat pour commencer à travailler sérieusement, ils m'ont donné deux autres applications web",
+    "the first an application (Symfony 3.4) that allows students to connect is to fill in the internship reports that do it at the hospital and at the end of each month the admin can download all the reports.":"la première une application (Symfony 3.4) qui permet aux étudiants de se connecter est de remplir les rapports de stage qui le font à l'hôpital et à la fin de chaque mois l'admin peut télécharger tous les rapports.",
+    "The second application (Symfony 3.4) was a website for students to review all the courses they missed, view grades, and submit reclamations.":"La deuxième application (Symfony 3.4) était un site Web permettant aux étudiants de revoir tous les cours qu'ils avaient manqués, d'afficher les notes et de soumettre des réclamations.",
+
+    "Change the us of interfaces":"Changer le ux des interfaces",
+
+    "At the beginning of June I became chief service of the university solution with one more application (Symfony 4.0) which was only 50% built and I continue construction. This is my fourth web application in total, the application allows students of all training to access and prepare for the exam through a multiple choice system with correction at the end and they can also take exams online or take tests. the application had three main interfaces first one for the team that manages all the questions, one for the teachers they can get pdf extractions and add the correction for these questions, and the main part the students who have interfaces for history, exams, preparation, and mock exams": "Début de juin j'ai devenu chef de service de la solution universitaire avec une application (Symfony 4.0) de plus qui n'a été construite qu'à 50% et je poursuis la construction. Il s'agit de ma quatrième application web au total, l'application permet aux étudiants de toutes formations d'accéder et de se préparer à l'examen via un système à choix multiples avec correction à la fin et ils peuvent également passer des examens en ligne ou passer des tests. l'application avait trois interfaces principales d'abord une pour l'équipe qui gère toutes les questions, une pour les enseignants ils peuvent obtenir des extractions pdf et ajouter la correction pour ces questions, et la partie principale les étudiants qui ont des interfaces pour l'histoire, les examens, la préparation, et examens blancs",
+
+    "Upgrade the second application from Symfony 3.4 to Symfony 5.3":"Mettez à niveau la deuxième application de Symfony 3.4 vers Symfony 5.3",
+    "Upgrade the fourth application from Symfony 4.0 to Symfony 5.3":"Mettez à niveau la quatrième application de Symfony 4.0 vers Symfony 5.3",
+    "Mentor and train symfony to my new team":"Encadrer et former symfony à ma nouvelle équipe",
+    
+    "get in touch with us": "PRENEZ CONTACT AVEC NOUS",
+    "Send Happiness": "ENVOYER LE BONHEUR",
+    "Full Name": "Nom et Prénom",
+    "Object":"Objet",
+    "Thank you": "Merci",
+    "Send": "Envoyer",
+
+
+    "My Social Media": "Mes réseaux sociaux",
+    "My address": "Mon Adresse",
+
+
+    "Made with": "Réalisé avec",
+    "by":"par",
+
+    "Hello": "Bonjour",
+    "Thank you for your trust on us, We received your email and we are processing it. We gonna contact you as fast as we can":"Merci de la confiance que vous nous accordez, Nous avons bien reçu votre email et nous le traitons. Nous allons vous contacter aussi vite que possible",
+    "Have a good day":"Passe une bonne journée"
+
+}

@@ -1,9 +1,10 @@
 header {
     height: 100vh;
-    background-image: linear-gradient(rgba(#000, .2), rgba(#000, .2)), url(../images/background2.jpg);
+    background-image: linear-gradient(rgba(#000, .2), rgba(#000, .2)), url("../images/background2.jpg");
     background-size: cover;
     background-position: center;
     position: relative;
+
 }
 
 .bodyActive {
@@ -11,32 +12,17 @@ header {
     
 }
 
-.sticky {
-   //transition: all 1s;
+.blackheader {
+//    transition: all 1s;
     & nav {
         
-        background-color: white;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 5000;
-        padding: .5rem 0;
-        box-shadow: 0 .5rem 1rem rgba($color: #000000, $alpha: .2);
-        transition-duration: 1s;
-        transition-property: padding;
+        background-color: $color-primary-dark !important;
     }
 
     & .nav {
-        &__container {
-            
-            
-            
-            
-        }
         &__logo {
-            color: $color-primary-dark;
-            font-size: 3rem;
+            color: $color-white !important;
+            
             //transition: all 1s;
         }
 
@@ -45,17 +31,60 @@ header {
 
             &-item:link,
             &-item:visited {
-                color: $color-primary-dark;
-                transition: all .3s;
+                color: $color-white !important;
             }
         }
     }
     
 }
+.sticky {
+    
+     & nav {
+         
+         background-color: white;
+         position: fixed;
+         top: 0;
+         left: 0;
+         width: 100%;
+         z-index: 5000;
+        //  padding: .5rem 0;
+         box-shadow: 0 .5rem 1rem rgba($color: #000000, $alpha: .2);
+        //  transition-duration: 1s;
+        //  transition-property: padding;
+     }
+ 
+     & .nav {
+         &__container {
+             
+             
+             
+             
+         }
+         &__logo {
+             color: $color-primary-dark;
+             font-size: 3rem;
+             //transition: all 1s;
+         }
+ 
+         &__menu {
+ 
+ 
+             &-item:link,
+             &-item:visited {
+                 color: $color-primary-dark;
+                //  transition: all .3s;
+             }
+         }
+     }
+     
+ }
 
 .nav {
     padding: 1rem 0;
-    transition: all 1s;
+    transition: all .5s ease;
+    position: relative;
+
+   
     //position: fixed;
     //top: 0;
     //width: 100%;
@@ -78,6 +107,7 @@ header {
     &__items {
         display: flex;
         align-items: center;
+
         @media screen and (max-width: 1000px) {
             position: fixed;
             top: 0;
@@ -121,14 +151,15 @@ header {
             font-size: 1.8rem;
             font-weight: 600;
             padding: .5rem .5rem;
-            margin-right: 2rem;
+            margin-right: 1.5rem;
             text-decoration: none;
             color:  $color-white;
-            transition: all 1s;
+            // transition: all 1s;
             position: relative;
             @media screen and (max-width: 1000px) {
                 margin-right: 0rem;
                 font-size: 2.5rem;
+                transition: all 1s;
             }
             &::after {
                 content: "";
@@ -190,12 +221,21 @@ header {
             transform: rotateX(360deg);
         }
     }
+
+    & .language {
+        position: absolute;
+        right: 2rem;
+        top: 50%;
+        transform: translateY(-50%);
+        font-size: 2rem;
+    }
 }
 .active {
 
     & .nav__menu-item {
         color: $color-white !important;
-        font-size: 5rem;
+        font-size: 4rem;
+        transition: all 1s;
     }
 
     & .line {
@@ -236,6 +276,7 @@ header {
         transition: color .5s;
         @media screen and (max-width: 1000px) {
             margin: 2rem;
+            font-size: 4rem;
         }
     }
     &__git:hover{
@@ -260,6 +301,7 @@ header {
         z-index: 10501;
     }
 }
+
 .line {
     @media screen and (max-width: 1000px) {
             width: 3rem;
@@ -302,7 +344,11 @@ header {
         }
     }
 }
-
+.blackheader .line {
+    @media screen and (max-width: 1000px) { 
+            background: $color-white !important;
+    }
+}
 .sticky .line {
     @media screen and (max-width: 1000px) { 
             background: $color-primary-dark;
@@ -323,8 +369,10 @@ header {
     left: 50%;
     transform: translate(-50%, -50%);
     &__heading {
+        font-family: $font-display;
         color: $color-white;
-        font-size: 6rem;
+        // font-size: 6rem;
+        font-size: 6.8rem;
         letter-spacing: -2px;
         
         &-name {

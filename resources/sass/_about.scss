@@ -1,5 +1,5 @@
 .about {
-    
+    padding: 8rem 0;
     background-color: $color-grey-light-1;
     &__container {
         display: flex;
@@ -75,8 +75,15 @@
         
         font-size: 2rem;
         //line-height: 1rem;
+        font-weight: 500;
         margin-bottom: 4rem;
-        text-align: center;
+        // text-align: center;
+        & span {
+            display: block;
+            padding: 1rem 0;
+            letter-spacing: 1.5px;
+
+        }
         & .fa-laugh-squint {
             color: $color-primary;
         }
